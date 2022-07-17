@@ -1,0 +1,21 @@
+<div class="section">
+
+  <%= form_with model: @post do |form| %>
+    <div class="field">
+      <%= form.label :title, "Title" %>
+      <div class="control">
+        <%= form.text_field :title, required: true, class: "input", placeholder: "title here" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= form.label :content, "Content" %>
+      <div class="control">
+        <%= form.text_area :content, size: "60x10", required: true, class: "textarea", placeholder: "type content here." %>
+      </div>
+    </div>
+
+    <%= form.submit class: "button is-primary" %>
+  <% end %>
+
+</section>

@@ -11,6 +11,19 @@
   </head>
 
   <body>
+  <section class="hero is-primary is-medium">
+    <!-- Hero head: will stick at the top -->
+    <div class="hero-head">
+      <%= render 'shared/navbar' %>
+    </div>
+
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <%= yield :page_title %>
+      </div>
+    </div>
+  </section>
     <%= yield %>
   </body>
 </html>
