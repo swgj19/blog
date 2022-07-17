@@ -1,0 +1,23 @@
+<h1 class="title is-4 has-text-centered m-3">New Post</h1>
+
+<div class="section">
+
+  <%= form_with model: @post do |form| %>
+    <div class="field">
+      <%= form.label :title, "Title" %>
+      <div class="control">
+        <%= form.text_field :title, class: "input", placeholder: "title here" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= form.label :content, "Content" %>
+      <div class="control">
+        <%= form.text_area :content, size: "60x10", class: "textarea", placeholder: "type content here." %>
+      </div>
+    </div>
+
+    <%= form.submit 'Create Post', class: "button is-primary" %>
+  <% end %>
+
+</div>
