@@ -1,0 +1,18 @@
+<%= form_for([@post, @post.opinions.build]) do |form| %>
+
+  <div class="field">
+      <%= form.label :name, "Name" %>
+      <div class="control">
+        <%= form.text_field :name, required: true, class: "input", placeholder: "name here" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= form.label :opinion, "Opinion" %>
+      <div class="control">
+        <%= form.text_area :opinion, size: "60x10", required: true, class: "textarea", placeholder: "type opinion here." %>
+      </div>
+    </div>
+
+    <%= form.submit class: "button is-primary" %>
+<% end %>

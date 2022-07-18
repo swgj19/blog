@@ -1,0 +1,14 @@
+<div class="box">
+  <article class="media">
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong><%= opinion.name %>: </strong>
+          <%= opinion.opinion %>
+        </p>
+      </div>
+    </div>
+
+    <%= link_to 'Delete', [opinion.post, opinion], method: :delete, class: "button is-danger", data: { confirm: "Are you sure?" } %>
+  </article>
+</div>
