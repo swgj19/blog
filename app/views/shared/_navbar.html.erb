@@ -1,7 +1,7 @@
     <nav class="navbar">
       <div class="container">
         <div class="navbar-brand">
-          <%= link_to 'blog', posts_path, class: 'navbar-item' %>
+          <%= link_to 'drivetodev', posts_path, class: 'navbar-item' %>
           <span class="navbar-burger" data-target="navbarMenuHeroA">
             <span></span>
             <span></span>
@@ -10,21 +10,22 @@
         </div>
         <div id="navbarMenuHeroA" class="navbar-menu">
           <div class="navbar-end">
+
+            <% if current_user %>
+            <a class="navbar-item has-text-info-dark"><%= current_user.username %></a>
             <%= link_to 'new post', new_post_path, class: 'navbar-item' %>
+            <%= link_to 'sign out', destroy_user_session_path, method: :delete, class:"navbar-item" %>
+            <% else %>
+            <%= link_to 'sign In', new_user_session_path, class:"navbar-item" %>
+            <%= link_to 'sign up', new_user_registration_path, class:"navbar-item" %>
+            <% end %>
             <a class="navbar-item">
-              Examples
+              about
             </a>
             <a class="navbar-item">
-              Documentation
+              contact
             </a>
-            <span class="navbar-item">
-              <a class="button is-primary is-inverted">
-                <span class="icon">
-                  <i class="fab fa-github"></i>
-                </span>
-                <span>Download</span>
-              </a>
-            </span>
+
           </div>
         </div>
       </div>

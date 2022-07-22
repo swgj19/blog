@@ -1,17 +1,29 @@
 <div class="section">
 
   <%= form_with model: @post do |form| %>
+    <% if @post.errors.any? %>
+    <div class="error">
+      <h2>
+        <%= pluralize(@post.errors.count, "error") %> stopped this post from being saved:
+      </h2>
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
     <div class="field">
       <%= form.label :title, "Title" %>
       <div class="control">
-        <%= form.text_field :title, required: true, class: "input", placeholder: "title here" %>
+        <%= form.text_field :title, required: false, class: "input", placeholder: "title here" %>
       </div>
     </div>
 
     <div class="field">
       <%= form.label :content, "Content" %>
       <div class="control">
-        <%= form.text_area :content, size: "60x10", required: true, class: "textarea", placeholder: "type content here." %>
+        <%= form.text_area :content, size: "60x10", required: false, class: "textarea", placeholder: "type content here." %>
       </div>
     </div>
 

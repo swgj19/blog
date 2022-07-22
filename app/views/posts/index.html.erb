@@ -1,6 +1,6 @@
 <% content_for :page_title do %>
   <h1 class="title is-4 has-text-centered m-3" style="margin-top: 2em">
-blog index
+posts
 </h1>
 <% end %>
 
@@ -11,14 +11,15 @@ blog index
         <div class="card-content">
           <div class="media">
             <div class="media-content">
-              <p class="title is-4"><%= link_to post.title, post %></p>
+              <p class="title is-4 has-text-primary"><%= link_to post.title, post %></p>
+              <p>author: <%= post.username %></p>
             </div>
           </div>
           <div class="content">
-            <%= post.content %>
+            <%= post.content.first(120) %>...
           </div>
           <div class="comment-count">
-            <span class="tag is-rounded">comment count</span>
+            <span class="tag is-rounded"><%= post.opinions.count %> opinions</span>
           </div>
         </div>
       </div>

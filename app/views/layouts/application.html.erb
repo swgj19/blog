@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog</title>
+    <title>drivetodev</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,18 +11,13 @@
   </head>
 
   <body>
-  <section class="hero is-primary is-medium">
-    <!-- Hero head: will stick at the top -->
-    <div class="hero-head">
+  <section class="is-primary is-medium">
+   
       <%= render 'shared/navbar' %>
-    </div>
-
-    <!-- Hero content: will be in the middle -->
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <%= yield :page_title %>
-      </div>
-    </div>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield :page_title %>
+      
   </section>
     <%= yield %>
   </body>
