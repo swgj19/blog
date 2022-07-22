@@ -5,18 +5,21 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :posts, dependent: :destroy
 
+  # shorthand for getter & setter
   attr_accessor :login
+  validate :validate_username
 
-  "getter"
-  def login
-    @login || username || email
-  end
+  # # getter
+  # def login
+  #   @login || username || email
+  # end
 
-  "setter"
-  def login=(str)
-   @login = str
-  end
+  # # setter
+  # def login=(str)
+  #  @login = str
+  # end
 
+  # extends Devise to query via warden
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
@@ -26,10 +29,9 @@ class User < ApplicationRecord
     end
   end
 
-  
-
-  # def username
-  #   return self.email.split('@')[0].capitalize
-  # end
-
+  def validate_username
+    if User.where(email: username).exists?
+      errors.add(:username, :invalid)
+    end
+  end
 end

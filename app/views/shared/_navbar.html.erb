@@ -12,8 +12,8 @@
           <div class="navbar-end">
 
             <% if current_user %>
-            <a class="navbar-item has-text-info-dark"><%= current_user.username %></a>
-            <%= link_to 'new post', new_post_path, class: 'navbar-item' %>
+            <%= link_to current_user.username, edit_user_registration_path, class: "navbar-item" %>
+            <%= link_to 'new post', new_post_path, class: "navbar-item" %>
             <%= link_to 'sign out', destroy_user_session_path, method: :delete, class:"navbar-item" %>
             <% else %>
             <%= link_to 'sign In', new_user_session_path, class:"navbar-item" %>

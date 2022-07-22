@@ -1,13 +1,10 @@
-<h2>Log in</h2>
-
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
 
-    <%= f.text_field :login, autofocus: true, class: "input" %>
-  
-    
-    <%= f.input :password,
+    <%= f.text_field :login, autofocus: true, placeholder: "email or username" %>
+    <%= f.text_field :password,
                 required: false,
+                placeholder: "password",
                 input_html: { autocomplete: "current-password" } %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>

@@ -4,10 +4,9 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-  <%= f.text_field :username, autofocus: true, class:"input" %>
+  <%= f.input :username, required: true, autofocus: true %>
     <%= f.input :email,
                 required: true,
-                autofocus: true,
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password,
                 required: true,
