@@ -6,16 +6,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag 'app', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'menu' %>
   </head>
 
   <body>
+ 
   <section class="is-primary is-medium">
-   
       <%= render 'shared/navbar' %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <p class="notice has-text-centered"><%= notice %></p>
+      <p class="alert has-text-centered"><%= alert %></p>
       <%= yield :page_title %>
       
   </section>
