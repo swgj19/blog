@@ -41,7 +41,13 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    # destroy opinions associated with posts
     @post = Post.find(params[:id])
+    @opinion = @post.opinions.where(post_id: @post.id)
+    @opinion.each do |opinion|
+      opinion.destroy
+    end
+
     @post.destroy
 
     redirect_to posts_path

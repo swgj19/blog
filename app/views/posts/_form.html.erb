@@ -1,4 +1,4 @@
-<div class="section">
+<div class="section post-box mt-6">
 
   <%= form_with model: @post do |form| %>
     <% if @post.errors.any? %>
@@ -23,11 +23,11 @@
     <div class="field">
       <%= form.label :content, "Content" %>
       <div class="control">
-        <%= form.text_area :content, size: "60x10", required: false, class: "textarea", placeholder: "type content here." %>
+        <%= form.rich_text_area :content, rows: 40, required: false, class: "textarea", placeholder: "type content here." %>
       </div>
     </div>
 
     <%= form.submit class: "button is-primary" %>
   <% end %>
 
-</section>
+</div>

@@ -18,6 +18,15 @@ body {
   box-shadow: 0 7px 13px rgba(133, 133, 133, 0.6);
 }
 
+.post-box {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background: none;
+  box-sizing: border-box;
+  box-shadow: 0 7px 13px rgba(133, 133, 133, 0.6);
+}
+
 .login-box h2 {
   margin: 0 0 30px;
   padding: 0;
